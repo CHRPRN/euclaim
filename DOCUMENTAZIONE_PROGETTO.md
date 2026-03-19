@@ -101,3 +101,5 @@ Quando cambierai postazione per lavorare da macOS, dovrai ripristinare il colleg
 - [ ] **Test E2E e Automazione UI:** Finalizzazione ed esecuzione dei test End-to-End di widget/integrazione (usando Firebase Emulator) per simulare il flusso completo "Guest -> Autenticazione -> Compilazione Pratica Form Dinamico -> Pagamento".
 - [ ] **Pipeline CI/CD:** Setup dei workflow automatizzati (es. GitHub Actions o alternative) per eseguire i test ad ogni push e pacchettizzare le build.
 - [ ] **Lancio iOS:** Configurazione dei certificati Apple e dei file `GoogleService-Info.plist` per la pubblicazione su App Store.
+
+by C-zero
