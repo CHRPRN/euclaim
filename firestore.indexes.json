@@ -1,0 +1,18 @@
+{
+    "indexes": [
+        {
+            "collectionGroup": "user_applications",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "status",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "createdAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        }
+    ]
+}

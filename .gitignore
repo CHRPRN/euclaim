@@ -1,0 +1,34 @@
+# Firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+ui-debug.log
+
+# Android
+**/*.keystore
+**/*.jks
+**/key.properties
+**/google-services.json
+
+# iOS
+**/GoogleService-Info.plist
+**/Pods/
+**/Podfile.lock
+**/*.xcworkspace
+
+# Flutter
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.dart_tool/
+**/pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Node.js (Functions)
+**/node_modules/
+functions/lib/

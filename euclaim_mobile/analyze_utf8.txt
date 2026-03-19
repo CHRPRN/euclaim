@@ -1,0 +1,45 @@
+﻿Analyzing euclaim_mobile...                                     
+
+   info - 'purchasePackage' is deprecated and shouldn't be used. Use purchase(PurchaseParams) - lib\core\providers\external_providers.dart:34:36 - deprecated_member_use
+warning - Unused import: 'package:flutter/material.dart' - lib\core\router.dart:1:8 - unused_import
+  error - The method 'signIn' isn't defined for the type 'GoogleSignIn' - lib\features\auth\auth_provider.dart:25:66 - undefined_method
+   info - Uses 'await' on an instance of 'GoogleSignInAuthentication', which is not a subtype of 'Future' - lib\features\auth\auth_provider.dart:29:11 - await_only_futures
+  error - The getter 'accessToken' isn't defined for the type 'GoogleSignInAuthentication' - lib\features\auth\auth_provider.dart:31:33 - undefined_getter
+warning - Unused import: 'package:cloud_firestore/cloud_firestore.dart' - lib\features\claims\claims_provider.dart:1:8 - unused_import
+  error - Undefined class 'UserApplicationsRef' - lib\features\radar\radar_provider.dart:8:3 - undefined_class
+warning - Unused import: 'dart:io' - lib\features\upload\upload_provider.dart:1:8 - unused_import
+warning - Unused import: 'package:firebase_storage/firebase_storage.dart' - lib\features\upload\upload_provider.dart:2:8 - unused_import
+   info - The import of 'package:flutter_image_compress/flutter_image_compress.dart' is unnecessary because all of the used elements are also provided by the import of 'package:image_picker/image_picker.dart' - lib\features\upload\upload_provider.dart:3:8 - unnecessary_import
+   info - Don't invoke 'print' in production code - run_build.dart:4:3 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:11:3 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:12:3 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:13:3 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:14:3 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:15:3 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:18:5 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:24:5 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:25:5 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:26:5 - avoid_print
+   info - Don't invoke 'print' in production code - run_build.dart:27:5 - avoid_print
+warning - The getter doesn't override an inherited getter - test\auth_provider_test.dart:18:15 - override_on_non_overriding_member
+warning - The method doesn't override an inherited method - test\auth_provider_test.dart:28:32 - override_on_non_overriding_member
+  error - The argument type 'Future<MockGoogleSignInAuthentication> Function(Invocation)' can't be assigned to the parameter type 'Answer<GoogleSignInAuthentication>'.  - test\auth_provider_test.dart:82:22 - argument_type_not_assignable
+warning - The class 'Query' shouldn't be extended, mixed in, or implemented because it's sealed - test\claims_provider_test.dart:9:1 - subtype_of_sealed_class
+warning - The class 'Query' shouldn't be extended, mixed in, or implemented because it's sealed - test\claims_provider_test.dart:10:1 - subtype_of_sealed_class
+warning - The class 'DocumentSnapshot' shouldn't be extended, mixed in, or implemented because it's sealed - test\claims_provider_test.dart:12:1 - subtype_of_sealed_class
+warning - The class 'QueryDocumentSnapshot' shouldn't be extended, mixed in, or implemented because it's sealed - test\claims_provider_test.dart:12:1 - subtype_of_sealed_class
+warning - Unused import: 'package:euclaim_mobile/core/notification_service.dart' - test\notification_service_test.dart:2:8 - unused_import
+warning - The method doesn't override an inherited method - test\paywall_provider_test.dart:18:12 - override_on_non_overriding_member
+  error - The name 'MyApp' isn't a class - test\widget_test.dart:16:35 - creation_with_non_type
+
+flutter : 31 issues found. (ran in 
+11.0s)
+In riga:1 car:1
++ flutter analyze > analyze.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpeci 
+   fied: (31 issues found. (ran in 11  
+  .0s):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCo 
+   mmandError
+ 
