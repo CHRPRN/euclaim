@@ -43,6 +43,7 @@ class PurchasesWrapper {
   Future<CustomerInfo> getCustomerInfo() => Purchases.getCustomerInfo();
   Future<Offerings> getOfferings() => Purchases.getOfferings();
   Future<CustomerInfo> purchasePackage(Package package) async {
+    // ignore: deprecated_member_use
     final result = await Purchases.purchasePackage(package);
     return result.customerInfo;
   }

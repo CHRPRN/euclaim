@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:euclaim_mobile/core/notification_service.dart';
 
 void main() {
   test('NotificationService initialization', () async {
