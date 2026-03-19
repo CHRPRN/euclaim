@@ -5,7 +5,7 @@ part 'radar_provider.g.dart';
 
 @riverpod
 Stream<List<Map<String, dynamic>>> userApplications(
-  UserApplicationsRef ref,
+  Ref ref,
   String userId,
 ) {
   return FirebaseFirestore.instance

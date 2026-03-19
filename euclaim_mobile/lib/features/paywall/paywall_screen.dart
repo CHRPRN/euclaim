@@ -15,7 +15,7 @@ class PaywallScreen extends ConsumerWidget {
         data: (isPro) => Center(
           child: ElevatedButton(
             onPressed: () =>
-                ref.read(paywallControllerProvider.notifier).purchaseCredit(),
+                ref.read(paywallControllerProvider.notifier).purchaseSingleClaim(),
             child: const Text('Acquista Credito'),
           ),
         ),

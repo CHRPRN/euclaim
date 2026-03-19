@@ -5,10 +5,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
+// ignore: subtype_of_sealed_class
 class MockFirebaseFirestore extends Mock implements FirebaseFirestore {}
+// ignore: subtype_of_sealed_class
 class MockCollectionReference<T extends Object?> extends Mock implements CollectionReference<T> {}
+// ignore: subtype_of_sealed_class
 class MockQuery<T extends Object?> extends Mock implements Query<T> {}
+// ignore: subtype_of_sealed_class
 class MockQuerySnapshot<T extends Object?> extends Mock implements QuerySnapshot<T> {}
+// ignore: subtype_of_sealed_class
 class MockQueryDocumentSnapshot<T extends Object?> extends Mock implements QueryDocumentSnapshot<T> {}
 
 void main() {
