@@ -61,7 +61,7 @@ jobs:
 
       - name: Decode Keystore
         run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > euclaim_mobile/android/app/upload-keystore.jks
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > euclaim_mobile/android/app/upload-keystore.jks
 
       - name: Create key.properties
         run: |
