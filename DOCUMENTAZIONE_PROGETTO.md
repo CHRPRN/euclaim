@@ -49,13 +49,18 @@ EUClaim è un ecosistema composto da una Mobile App (Flutter) e una Web Dashboar
 ### Fase 11: Rilascio & Automazione CI/CD (Marzo 2026)
 - **Firebase Production:** Deploy completo di Firestore Rules, Indexes, Storage Rules e Cloud Functions sul progetto `euclaim-95176`.
 - **Web Admin Dashboard:** Pubblicazione automatizzata su Firebase Hosting ([euclaim-95176.web.app](https://euclaim-95176.web.app)).
-- **Pipeline CI/CD (GitHub Actions):** Configurato workflow `main.yml` che esegue:
-    - Analisi statica del codice (Zero Warnings/Errors).
-    - Unit Tests con copertura su Auth, Claims, Paywall e Upload.
-    - Build automatica Android App Bundle (AAB) firmata.
-    - Deploy automatico della Web Admin ad ogni push su `main`.
-- **Integrazione Pagamenti:** Configurate le API Key di RevenueCat (`goog_...`) per l'ambiente Android Live.
-- **Testing Infrastructure:** Introdotta suite di fakes (`fake_cloud_firestore`, `firebase_auth_mocks`, `google_sign_in_mocks`) per test rapidi, deterministici e isolati nel cloud.
+- **Pipeline CI/CD (GitHub Actions):** Workflow `main.yml` 100% Green. Esegue analisi, test unitari e build AAB.
+- **Gestione Segreti:** Configurato sistema di decodifica Base64 per file sensibili (`keystore`, `google-services.json`) via GitHub Secrets.
+- **Build Android:** Generazione con successo di `app-release.aab` (firmato e pronto per il Play Store).
+- **Testing Infrastructure:** Suite di fakes (`fake_cloud_firestore`, `firebase_auth_mocks`) integrata e funzionante in ambiente cloud.
+
+## Gestione Segreti (GitHub Actions)
+Per il corretto funzionamento della pipeline, sono stati configurati i seguenti Secrets in GitHub:
+- `ANDROID_KEYSTORE_BASE64`: File `.jks` convertito in Base64.
+- `GOOGLE_SERVICES_JSON_BASE64`: File `google-services.json` convertito in Base64.
+- `ANDROID_KEYSTORE_PASSWORD` / `ANDROID_KEY_PASSWORD`: Password per la firma.
+- `ANDROID_KEY_ALIAS`: Alias della chiave (es. `upload`).
+- `FIREBASE_SERVICE_ACCOUNT_EUCLAIM_95176`: Token per il deploy della Web Admin.
 
 ## Configurazione Ambiente Mac (Apple Silicon / Intel)
 Quando cambierai postazione per lavorare da macOS, dovrai ripristinare il collegamento con Firebase e preparare le dipendenze iOS. Segui questi step:
