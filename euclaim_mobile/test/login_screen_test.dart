@@ -1,5 +1,4 @@
 import 'package:euclaim_mobile/features/auth/login_screen.dart';
-import 'package:euclaim_mobile/features/auth/auth_provider.dart';
 import 'package:euclaim_mobile/core/providers/external_providers.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:google_sign_in_mocks/google_sign_in_mocks.dart';

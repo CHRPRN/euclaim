@@ -46,11 +46,16 @@ EUClaim è un ecosistema composto da una Mobile App (Flutter) e una Web Dashboar
     - `paywall_provider_test.dart`: Verifica dello stato premium e dell'integrazione con RevenueCat.
     - `claims_provider_test.dart`: Review dei test esistenti per la coerenza con i dati di Firestore.
 
-### Fase 11: Rilascio in Produzione (Marzo 2026)
+### Fase 11: Rilascio & Automazione CI/CD (Marzo 2026)
 - **Firebase Production:** Deploy completo di Firestore Rules, Indexes, Storage Rules e Cloud Functions sul progetto `euclaim-95176`.
-- **Web Admin Dashboard:** Pubblicazione su Firebase Hosting all'indirizzo [https://euclaim-95176.web.app](https://euclaim-95176.web.app). Configurato accesso Super Admin tramite UID Firestore.
-- **Android Release:** Generazione della Keystore di produzione (`upload-keystore.jks`), configurazione del signing e build dell'Android App Bundle (AAB) pronto per Google Play Console.
+- **Web Admin Dashboard:** Pubblicazione automatizzata su Firebase Hosting ([euclaim-95176.web.app](https://euclaim-95176.web.app)).
+- **Pipeline CI/CD (GitHub Actions):** Configurato workflow `main.yml` che esegue:
+    - Analisi statica del codice (Zero Warnings/Errors).
+    - Unit Tests con copertura su Auth, Claims, Paywall e Upload.
+    - Build automatica Android App Bundle (AAB) firmata.
+    - Deploy automatico della Web Admin ad ogni push su `main`.
 - **Integrazione Pagamenti:** Configurate le API Key di RevenueCat (`goog_...`) per l'ambiente Android Live.
+- **Testing Infrastructure:** Introdotta suite di fakes (`fake_cloud_firestore`, `firebase_auth_mocks`, `google_sign_in_mocks`) per test rapidi, deterministici e isolati nel cloud.
 
 ## Configurazione Ambiente Mac (Apple Silicon / Intel)
 Quando cambierai postazione per lavorare da macOS, dovrai ripristinare il collegamento con Firebase e preparare le dipendenze iOS. Segui questi step:
@@ -92,14 +97,13 @@ Quando cambierai postazione per lavorare da macOS, dovrai ripristinare il colleg
 ## Stato Attuale degli Stream (Aggiornamento: Marzo 2026)
 
 ### Stream Eseguiti (Completati di recente)
-- [x] **Configurazione Firebase & Setup Progetto:** Completato il setup tramite `flutterfire configure`, sincronizzando le app Flutter con i Firebase services e sistemando le configurazioni e i package name iOS/Android.
-- [x] **Implementazione e Debug Test Unitari:** Eseguito un refactoring architetturale per la testabilità (Dependency Injection per gli external providers) e implementati test completi per i flussi critici (`auth_provider`, `claims_provider`, `upload_provider`, `paywall_provider`). Risolti bug nell'esecuzione locale dei test.
-- [x] **Risoluzione Conflitti Pubspec & App Bundle:** Analizzati e risolti conflitti critici di dipendenze Dart (incluso l'aggiornamento a versioni stabili come per `google_sign_in`) indispensabili per sbloccare la build per gli store (Android App Bundle).
-- [x] **Build e Deploy Produzione:** Configurazione degli ambienti di produzione, deploy backend, pubblicazione Dashboard Web ([euclaim-95176.web.app](https://euclaim-95176.web.app)) e generazione Android App Bundle (AAB) con firma di produzione.
+- [x] **Configurazione Firebase & Setup Progetto:** Completato il setup tramite `flutterfire configure`, sincronizzando le app Flutter con i Firebase services.
+- [x] **Implementazione e Debug Test Unitari:** Eseguito un refactoring per la testabilità e implementati test completi con fakes professionali (`fake_cloud_firestore`, `firebase_auth_mocks`). Tutti i test passano ora al 100% in CI.
+- [x] **Automazione CI/CD:** Workflow GitHub Actions attivo per testing, build e deploy continuo. Sincronizzate le versioni Flutter (3.41.4) tra locale e cloud.
+- [x] **Build e Deploy Produzione:** Deploy backend, pubblicazione Dashboard Web e generazione Android App Bundle (AAB) con firma di produzione.
 
 ### Stream da Fare (Prossimi Passi)
-- [ ] **Test E2E e Automazione UI:** Finalizzazione ed esecuzione dei test End-to-End di widget/integrazione (usando Firebase Emulator) per simulare il flusso completo "Guest -> Autenticazione -> Compilazione Pratica Form Dinamico -> Pagamento".
-- [ ] **Pipeline CI/CD:** Setup dei workflow automatizzati (es. GitHub Actions o alternative) per eseguire i test ad ogni push e pacchettizzare le build.
+- [ ] **Test E2E e Automazione UI:** Finalizzazione dei test End-to-End di widget/integrazione (usando Firebase Emulator locale) per simulare i flussi UI complessi.
 - [ ] **Lancio iOS:** Configurazione dei certificati Apple e dei file `GoogleService-Info.plist` per la pubblicazione su App Store.
 
 by C-zero
